@@ -15,7 +15,7 @@ import com.unity3d.player.UnityPlayer;
 
 import static com.unity3d.player.UnityPlayer.currentActivity;
 
-public class UnityToastPowerMode {
+public class UnityToastPowerMode extends Activity{
     private static UnityToastPowerMode m_instance;
     private Context context;
 
@@ -45,5 +45,10 @@ public class UnityToastPowerMode {
             //Toast.makeText(this.context, "Normal mode", Toast.LENGTH_LONG).show();
             UnityPlayer.UnitySendMessage(objName, objMethod, "false");
         }
+    }
+
+    private static void OpenBatterySaver(Activity activity){
+        Intent intent=new Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS);
+        activity.startActivity(intent);
     }
 }
