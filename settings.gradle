@@ -1,0 +1,3 @@
+include ':ToastPowerMode'
+include ':app'
+rootProject.name = "UnityToastBatteryModePlugin"
